@@ -1,165 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' https://cdn.tailwindcss.com; script-src 'self' https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:;"> 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
+
+ <title>Tattoo Booking & Consultation</title>
+ <script src="https://cdn.tailwindcss.com"></script>
+ <style>
+ body { background-color: #121212; color: #e0e0e0; font-family: 'Courier New', Courier, monospace; }
+ /* Style to ensure the honeypot field remains completely invisible to real users */
+ .absolute-hidden { position: absolute; left: -5000px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+ 
+/* New Gothic Font Class */
+ .font-gothic { font-family: 'Pirata One', system-ui; }
+ </style>
+</head>
+<body class="bg-[#c73508] text-zinc-100">
+
+ <div class="min-h-screen px-4 py-8 sm:py-12">
+ <div class="w-full max-w-3xl mx-auto bg-zinc-800 border border-zinc-100 rounded-xl shadow-2xl p-6 sm:p-10 mb-48 sm:mb-12">
+ <div class="text-center mb-8 border-b border-zinc-800 pb-6">
+ <h1 class="text-4xl sm:text-5xl tracking-widest text-amber-500 mb-2 font-gothic">Houston Tien Tattoo</h1>
+ <p class="text-zinc-400 text-sm sm:text-base">Book your session and share your unique tattoo concept</p>
+ </div>
 <form id="tattooBookingForm" class="space-y-6" action="https://formspree.io/f/mpqgegnj" method="POST" autocomplete="on">
  
-  <div class="absolute-hidden" aria-hidden="true">
-    <label for="form_backend_special_field">Leave this field blank</label>
-    <input type="text" id="form_backend_special_field" name="_gotcha" tabindex="-1" autocomplete="off">
-  </div>
+<div class="absolute-hidden" aria-hidden="true">
+ <label for="form_backend_special_field">Leave this field blank</label>
+ <input type="text" id="form_backend_special_field" name="_gotcha" tabindex="-1" autocomplete="off">
+ </div>
  
-  <div>
-    <h2 class="text-lg font-bold text-amber-500 uppercase tracking-wider mb-4">1. Personal Information</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-      <div class="flex flex-col h-full">
-        <label class="block text-xs uppercase font-semibold text-zinc-400 mb-1">Full Name *</label>
-        <input type="text" name="Full_Name" required maxlength="100" class="w-full bg-zinc-600 border border-zinc-800 rounded px-4 py-2.5 text-zinc-200 focus:outline-none focus:border-amber-500 transition mt-auto">
-      </div>
-      <div class="sm:col-span-1 flex flex-col h-full">
-        <label class="block text-xs uppercase font-semibold text-zinc-400 mb-1">Instagram User or Phone Number * (For design consultation/inquiry)</label>
-        <input type="text" name="Contact_Info" required placeholder="e.g., @username or 555-0123" class="w-full bg-zinc-600 border border-zinc-800 rounded px-4 py-2.5 text-zinc-200 focus:outline-none focus:border-amber-500 transition mt-auto">
-      </div>
-    </div>
-  </div>
+<div>
+ <h2 class="text-lg font-bold text-amber-500 uppercase tracking-wider mb-4">1. Personal Information</h2>
+ <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+ <div class="flex flex-col h-full">
+ <label class="block text-xs uppercase font-semibold text-zinc-400 mb-1">Full Name *</label>
+ <input type="text" name="Full_Name" required maxlength="100" class="w-full bg-zinc-600 border border-zinc-800 rounded px-4 py-2.5 text-zinc-200 focus:outline-none focus:border-amber-500 transition mt-auto">
+ </div>
+ <div class="sm:col-span-1 flex flex-col h-full">
+ <label class="block text-xs uppercase font-semibold text-zinc-400 mb-1">Instagram User or Phone Number * (For design consultation/inquiry)</label>
+ <input type="text" name="Contact_Info" required placeholder="e.g., @username or 555-0123" class="w-full bg-zinc-600 border border-zinc-800 rounded px-4 py-2.5 text-zinc-200 focus:outline-none focus:border-amber-500 transition mt-auto">
+ </div>
+ </div>
+ </div>
 
-  <hr class="border-zinc-800 my-6">
+ <hr class="border-zinc-800 my-6">
 
-  <div>
-    <h2 class="text-lg font-bold text-amber-500 uppercase tracking-wider mb-4">2. Schedule Your Appointment</h2>
-    <div class="space-y-6">
-      <div>
-        <label class="block text-xs uppercase font-semibold text-zinc-400 mb-2">Select Date *</label>
-        <input type="date" id="bookingDate" name="Requested_Date" required class="w-full bg-zinc-600 border border-zinc-800 rounded-xl px-4 py-3 text-zinc-200 focus:outline-none focus:border-amber-500 transition shadow-sm">
-      </div>
-      <div>
-        <label class="block text-xs uppercase font-semibold text-zinc-400 mb-3">Select Time Slot *</label>
-        <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-3">
-          
-          <div>
-            <input type="radio" id="time_1000" name="Requested_Time" value="10:00 AM" class="peer sr-only" required>
-            <label for="time_1000" class="flex items-center justify-center w-full py-2.5 text-sm rounded-xl border border-zinc-700 bg-zinc-700/30 text-zinc-400 cursor-pointer hover:bg-zinc-600 hover:text-zinc-200 hover:border-zinc-500 peer-checked:bg-amber-500 peer-checked:text-zinc-950 peer-checked:border-amber-500 peer-checked:font-bold peer-checked:shadow-[0_0_12px_rgba(245,158,11,0.4)] transition-all duration-300 select-none">10:00 AM</label>
-          </div>
-          <div>
-            <input type="radio" id="time_1030" name="Requested_Time" value="10:30 AM" class="peer sr-only" required>
-            <label for="time_1030" class="flex items-center justify-center w-full py-2.5 text-sm rounded-xl border border-zinc-700 bg-zinc-700/30 text-zinc-400 cursor-pointer hover:bg-zinc-600 hover:text-zinc-200 hover:border-zinc-500 peer-checked:bg-amber-500 peer-checked:text-zinc-950 peer-checked:border-amber-500 peer-checked:font-bold peer-checked:shadow-[0_0_12px_rgba(245,158,11,0.4)] transition-all duration-300 select-none">10:30 AM</label>
-          </div>
-          <div>
-            <input type="radio" id="time_1100" name="Requested_Time" value="11:00 AM" class="peer sr-only" required>
-            <label for="time_1100" class="flex items-center justify-center w-full py-2.5 text-sm rounded-xl border border-zinc-700 bg-zinc-700/30 text-zinc-400 cursor-pointer hover:bg-zinc-600 hover:text-zinc-200 hover:border-zinc-500 peer-checked:bg-amber-500 peer-checked:text-zinc-950 peer-checked:border-amber-500 peer-checked:font-bold peer-checked:shadow-[0_0_12px_rgba(245,158,11,0.4)] transition-all duration-300 select-none">11:00 AM</label>
-          </div>
-          <div>
-            <input type="radio" id="time_1130" name="Requested_Time" value="11:30 AM" class="peer sr-only" required>
-            <label for="time_1130" class="flex items-center justify-center w-full py-2.5 text-sm rounded-xl border border-zinc-700 bg-zinc-700/30 text-zinc-400 cursor-pointer hover:bg-zinc-600 hover:text-zinc-200 hover:border-zinc-500 peer-checked:bg-amber-500 peer-checked:text-zinc-950 peer-checked:border-amber-500 peer-checked:font-bold peer-checked:shadow-[0_0_12px_rgba(245,158,11,0.4)] transition-all duration-300 select-none">11:30 AM</label>
-          </div>
-          <div>
-            <input type="radio" id="time_1200" name="Requested_Time" value="12:00 PM" class="peer sr-only" required>
-            <label for="time_1200" class="flex items-center justify-center w-full py-2.5 text-sm rounded-xl border border-zinc-700 bg-zinc-700/30 text-zinc-400 cursor-pointer hover:bg-zinc-600 hover:text-zinc-200 hover:border-zinc-500 peer-checked:bg-amber-500 peer-checked:text-zinc-950 peer-checked:border-amber-500 peer-checked:font-bold peer-checked:shadow-[0_0_12px_rgba(245,158,11,0.4)] transition-all duration-300 select-none">12:00 PM</label>
-          </div>
-          <div>
-            <input type="radio" id="time_1230" name="Requested_Time" value="12:30 PM" class="peer sr-only" required>
-            <label for="time_1230" class="flex items-center justify-center w-full py-2.5 text-sm rounded-xl border border-zinc-700 bg-zinc-700/30 text-zinc-400 cursor-pointer hover:bg-zinc-600 hover:text-zinc-200 hover:border-zinc-500 peer-checked:bg-amber-500 peer-checked:text-zinc-950 peer-checked:border-amber-500 peer-checked:font-bold peer-checked:shadow-[0_0_12px_rgba(245,158,11,0.4)] transition-all duration-300 select-none">12:30 PM</label>
-          </div>
-          <div>
-            <input type="radio" id="time_1300" name="Requested_Time" value="01:00 PM" class="peer sr-only" required>
-            <label for="time_1300" class="flex items-center justify-center w-full py-2.5 text-sm rounded-xl border border-zinc-700 bg-zinc-700/30 text-zinc-400 cursor-pointer hover:bg-zinc-600 hover:text-zinc-200 hover:border-zinc-500 peer-checked:bg-amber-500 peer-checked:text-zinc-950 peer-checked:border-amber-500 peer-checked:font-bold peer-checked:shadow-[0_0_12px_rgba(245,158,11,0.4)] transition-all duration-300 select-none">01:00 PM</label>
-          </div>
-          <div>
-            <input type="radio" id="time_1330" name="Requested_Time" value="01:30 PM" class="peer sr-only" required>
-            <label for="time_1330" class="flex items-center justify-center w-full py-2.5 text-sm rounded-xl border border-zinc-700 bg-zinc-700/30 text-zinc-400 cursor-pointer hover:bg-zinc-600 hover:text-zinc-200 hover:border-zinc-500 peer-checked:bg-amber-500 peer-checked:text-zinc-950 peer-checked:border-amber-500 peer-checked:font-bold peer-checked:shadow-[0_0_12px_rgba(245,158,11,0.4)] transition-all duration-300 select-none">01:30 PM</label>
-          </div>
-          <div>
-            <input type="radio" id="time_1400" name="Requested_Time" value="02:00 PM" class="peer sr-only" required>
-            <label for="time_1400" class="flex items-center justify-center w-full py-2.5 text-sm rounded-xl border border-zinc-700 bg-zinc-700/30 text-zinc-400 cursor-pointer hover:bg-zinc-600 hover:text-zinc-200 hover:border-zinc-500 peer-checked:bg-amber-500 peer-checked:text-zinc-950 peer-checked:border-amber-500 peer-checked:font-bold peer-checked:shadow-[0_0_12px_rgba(245,158,11,0.4)] transition-all duration-300 select-none">02:00 PM</label>
-          </div>
-          <div>
-            <input type="radio" id="time_1430" name="Requested_Time" value="02:30 PM" class="peer sr-only" required>
-            <label for="time_1430" class="flex items-center justify-center w-full py-2.5 text-sm rounded-xl border border-zinc-700 bg-zinc-700/30 text-zinc-400 cursor-pointer hover:bg-zinc-600 hover:text-zinc-200 hover:border-zinc-500 peer-checked:bg-amber-500 peer-checked:text-zinc-950 peer-checked:border-amber-500 peer-checked:font-bold peer-checked:shadow-[0_0_12px_rgba(245,158,11,0.4)] transition-all duration-300 select-none">02:30 PM</label>
-          </div>
-          <div>
-            <input type="radio" id="time_1500" name="Requested_Time" value="03:00 PM" class="peer sr-only" required>
-            <label for="time_1500" class="flex items-center justify-center w-full py-2.5 text-sm rounded-xl border border-zinc-700 bg-zinc-700/30 text-zinc-400 cursor-pointer hover:bg-zinc-600 hover:text-zinc-200 hover:border-zinc-500 peer-checked:bg-amber-500 peer-checked:text-zinc-950 peer-checked:border-amber-500 peer-checked:font-bold peer-checked:shadow-[0_0_12px_rgba(245,158,11,0.4)] transition-all duration-300 select-none">03:00 PM</label>
-          </div>
-          <div>
-            <input type="radio" id="time_1530" name="Requested_Time" value="03:30 PM" class="peer sr-only" required>
-            <label for="time_1530" class="flex items-center justify-center w-full py-2.5 text-sm rounded-xl border border-zinc-700 bg-zinc-700/30 text-zinc-400 cursor-pointer hover:bg-zinc-600 hover:text-zinc-200 hover:border-zinc-500 peer-checked:bg-amber-500 peer-checked:text-zinc-950 peer-checked:border-amber-500 peer-checked:font-bold peer-checked:shadow-[0_0_12px_rgba(245,158,11,0.4)] transition-all duration-300 select-none">03:30 PM</label>
-          </div>
-          <div>
-            <input type="radio" id="time_1600" name="Requested_Time" value="04:00 PM" class="peer sr-only" required>
-            <label for="time_1600" class="flex items-center justify-center w-full py-2.5 text-sm rounded-xl border border-zinc-700 bg-zinc-700/30 text-zinc-400 cursor-pointer hover:bg-zinc-600 hover:text-zinc-200 hover:border-zinc-500 peer-checked:bg-amber-500 peer-checked:text-zinc-950 peer-checked:border-amber-500 peer-checked:font-bold peer-checked:shadow-[0_0_12px_rgba(245,158,11,0.4)] transition-all duration-300 select-none">04:00 PM</label>
-          </div>
-          <div>
-            <input type="radio" id="time_1630" name="Requested_Time" value="04:30 PM" class="peer sr-only" required>
-            <label for="time_1630" class="flex items-center justify-center w-full py-2.5 text-sm rounded-xl border border-zinc-700 bg-zinc-700/30 text-zinc-400 cursor-pointer hover:bg-zinc-600 hover:text-zinc-200 hover:border-zinc-500 peer-checked:bg-amber-500 peer-checked:text-zinc-950 peer-checked:border-amber-500 peer-checked:font-bold peer-checked:shadow-[0_0_12px_rgba(245,158,11,0.4)] transition-all duration-300 select-none">04:30 PM</label>
-          </div>
-          <div>
-            <input type="radio" id="time_1700" name="Requested_Time" value="05:00 PM" class="peer sr-only" required>
-            <label for="time_1700" class="flex items-center justify-center w-full py-2.5 text-sm rounded-xl border border-zinc-700 bg-zinc-700/30 text-zinc-400 cursor-pointer hover:bg-zinc-600 hover:text-zinc-200 hover:border-zinc-500 peer-checked:bg-amber-500 peer-checked:text-zinc-950 peer-checked:border-amber-500 peer-checked:font-bold peer-checked:shadow-[0_0_12px_rgba(245,158,11,0.4)] transition-all duration-300 select-none">05:00 PM</label>
-          </div>
-          <div>
-            <input type="radio" id="time_1730" name="Requested_Time" value="05:30 PM" class="peer sr-only" required>
-            <label for="time_1730" class="flex items-center justify-center w-full py-2.5 text-sm rounded-xl border border-zinc-700 bg-zinc-700/30 text-zinc-400 cursor-pointer hover:bg-zinc-600 hover:text-zinc-200 hover:border-zinc-500 peer-checked:bg-amber-500 peer-checked:text-zinc-950 peer-checked:border-amber-500 peer-checked:font-bold peer-checked:shadow-[0_0_12px_rgba(245,158,11,0.4)] transition-all duration-300 select-none">05:30 PM</label>
-          </div>
-          <div>
-            <input type="radio" id="time_1800" name="Requested_Time" value="06:00 PM" class="peer sr-only" required>
-            <label for="time_1800" class="flex items-center justify-center w-full py-2.5 text-sm rounded-xl border border-zinc-700 bg-zinc-700/30 text-zinc-400 cursor-pointer hover:bg-zinc-600 hover:text-zinc-200 hover:border-zinc-500 peer-checked:bg-amber-500 peer-checked:text-zinc-950 peer-checked:border-amber-500 peer-checked:font-bold peer-checked:shadow-[0_0_12px_rgba(245,158,11,0.4)] transition-all duration-300 select-none">06:00 PM</label>
-          </div>
+ <div>
+ <h2 class="text-lg font-bold text-amber-500 uppercase tracking-wider mb-4">2. Schedule Your Appointment</h2>
+ <div class="space-y-6">
+ <div>
+ <label class="block text-xs uppercase font-semibold text-zinc-400 mb-2">Select Date *</label>
+ <input type="date" id="bookingDate" name="Requested_Date" required class="w-full bg-zinc-600 border border-zinc-800 rounded-xl px-4 py-3 text-zinc-200 focus:outline-none focus:border-amber-500 transition shadow-sm">
+ </div>
+ <div>
+ <label class="block text-xs uppercase font-semibold text-zinc-400 mb-3">Select Time Slot *</label>
+ <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-3">
+ 
+ <!-- Time Slot: 10:00 AM -->
+ <div>
+ <input type="radio" id="time_1000" name="Requested_Time" value="10:00 AM" class="peer sr-only" required>
+ <label for="time_1000" class="flex items-center justify-center w-full py-2.5 text-sm rounded-xl border border-zinc-700 bg-zinc-700/30 text-zinc-400 cursor-pointer hover:bg-zinc-600 hover:text-zinc-200 hover:border-zinc-500 peer-checked:bg-amber-500 peer-checked:text-zinc-950 peer-checked:border-amber-500 peer-checked:font-bold peer-checked:shadow-[0_0_12px_rgba(245,158,11,0.4)] transition-all duration-300 select-none">
+ 10:00 AM
+ </label>
+ </div>
+ 
+ <!-- Time Slot: 10:30 AM -->
+ <div>
+ <input type="radio" id="time_1030" name="Requested_Time" value="10:30 AM" class="peer sr-only" required>
+ <label for="time_1030" class="flex items-center justify-center w-full py-2.5 text-sm rounded-xl border border-zinc-700 bg-zinc-700/30 text-zinc-400 cursor-pointer hover:bg-zinc-600 hover:text-zinc-200 hover:border-zinc-500 peer-checked:bg-amber-500 peer-checked:text-zinc-950 peer-checked:border-amber-500 peer-checked:font-bold peer-checked:shadow-[0_0_12px_rgba(245,158,11,0.4)] transition-all duration-300 select-none">
+ 10:30 AM
+ </label>
+ </div>
 
-        </div>
-      </div>
-    </div>
-  </div>
+ <!-- Time Slot: 11:00 AM -->
+ <div>
+ <input type="radio" id="time_1100" name="Requested_Time" value="11:00 AM" class="peer sr-only" required>
+ <label for="time_1100" class="flex items-center justify-center w-full py-2.5 text-sm rounded-xl border border-zinc-700 bg-zinc-700/30 text-zinc-400 cursor-pointer hover:bg-zinc-600 hover:text-zinc-200 hover:border-zinc-500 peer-checked:bg-amber-500 peer-checked:text-zinc-950 peer-checked:border-amber-500 peer-checked:font-bold peer-checked:shadow-[0_0_12px_rgba(245,158,11,0.4)] transition-all duration-300 select-none">
+ 11:00 AM
+ </label>
+ </div>
 
-  <hr class="border-zinc-800 my-6">
+ <!-- Time Slot: 11:30 AM -->
+ <div>
+ <input type="radio" id="time_1130" name="Requested_Time" value="11:30 AM" class="peer sr-only" required>
+ <label for="time_1130" class="flex items-center justify-center w-full py-2.5 text-sm rounded-xl border border-zinc-700 bg-zinc-700/30 text-zinc-400 cursor-pointer hover:bg-zinc-600 hover:text-zinc-200 hover:border-zinc-500 peer-checked:bg-amber-500 peer-checked:text-zinc-950 peer-checked:border-amber-500 peer-checked:font-bold peer-checked:shadow-[0_0_12px_rgba(245,158,11,0.4)] transition-all duration-300 select-none">
+ 11:30 AM
+ </label>
+ </div>
 
-  <div>
-    <h2 class="text-lg font-bold text-amber-500 uppercase tracking-wider mb-4">3. Tattoo Concept & Details</h2>
-    <div class="space-y-4">
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div>
-          <label class="block text-xs uppercase font-semibold text-zinc-400 mb-1">Placement on Body *</label>
-          <input type="text" name="Body_Placement" placeholder="e.g., Outer forearm, wrist..." required maxlength="100" class="w-full bg-zinc-600 border border-zinc-800 rounded px-4 py-2.5 text-zinc-200 focus:outline-none focus:border-amber-500 transition">
-        </div>
-        <div>
-          <label class="block text-xs uppercase font-semibold text-zinc-400 mb-1">Estimated Size *</label>
-          <input type="text" name="Estimated_Size" placeholder="e.g., 4x6&quot;, 10cm..." required maxlength="50" class="w-full bg-zinc-600 border border-zinc-800 rounded px-4 py-2.5 text-zinc-200 focus:outline-none focus:border-amber-500 transition">
-        </div>
-        <div>
-          <label class="block text-xs uppercase font-semibold text-zinc-400 mb-1">Ink Style *</label>
-          <select name="Ink_Style" required class="w-full bg-zinc-600 border border-zinc-800 rounded px-4 py-2.5 text-zinc-200 focus:outline-none focus:border-amber-500 transition">
-            <option value="">-- Choose Style --</option>
-            <option value="Black & Grey">Black & Grey</option>
-            <option value="Color">Color Ink</option>
-          </select>
-        </div>
-      </div>
-      
-      <div>
-        <label class="block text-xs uppercase font-semibold text-zinc-400 mb-1">Describe Your Idea *</label>
-        <textarea name="Idea_Description" rows="4" placeholder="Tell us about the story behind it, specific layout choices, and any details you want included..." required maxlength="2000" class="w-full bg-zinc-950 border border-zinc-800 rounded px-4 py-2.5 text-zinc-200 focus:outline-none focus:border-amber-500 transition resize-none"></textarea>
-      </div>
-    </div>
-  </div>
+ <!-- Time Slot: 12:00 PM -->
+ <div>
+ <input type="radio" id="time_1200" name="Requested_Time" value="12:00 PM" class="peer sr-only" required>
+ <label for="time_1200" class="flex items-center justify-center w-full py-2.5 text-sm rounded-xl border border-zinc-700 bg-zinc-700/30 text-zinc-400 cursor-pointer hover:bg-zinc-600 hover:text-zinc-200 hover:border-zinc-500 peer-checked:bg-amber-500 peer-checked:text-zinc-950 peer-checked:border-amber-500 peer-checked:font-bold peer-checked:shadow-[0_0_12px_rgba(245,158,11,0.4)] transition-all duration-300 select-none">
+ 12:00 PM
+ </label>
+ </div>
 
-  <hr class="border-zinc-800 my-6">
+ <!-- Time Slot: 12:30 PM -->
+ <div>
+ <input type="radio" id="time_1230" name="Requested_Time" value="12:30 PM" class="peer sr-only" required>
+ <label for="time_1230" class="flex items-center justify-center w-full py-2.5 text-sm rounded-xl border border-zinc-700 bg-zinc-700/30 text-zinc-400 cursor-pointer hover:bg-zinc-600 hover:text-zinc-200 hover:border-zinc-500 peer-checked:bg-amber-500 peer-checked:text-zinc-950 peer-checked:border-amber-500 peer-checked:font-bold peer-checked:shadow-[0_0_12px_rgba(245,158,11,0.4)] transition-all duration-300 select-none">
+ 12:30 PM
+ </label>
+ </div>
 
-  <div>
-    <h2 class="text-lg font-bold text-amber-500 uppercase tracking-wider mb-4">4. Safety & Eligibility</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-      <div>
-        <label class="block text-xs uppercase font-semibold text-zinc-400 mb-1">Are you 18 or older? *</label>
-        <select name="Age_Verification" required class="w-full bg-zinc-600 border border-zinc-800 rounded px-4 py-2.5 text-zinc-200 focus:outline-none focus:border-amber-500 transition">
-          <option value="">-- Select Option --</option>
-          <option value="Yes">Yes, I am 18 or older</option>
-          <option value="No">No, I am under 18</option>
-        </select>
-      </div>
-      <div>
-        <label class="block text-xs uppercase font-semibold text-zinc-400 mb-1">Do you have any allergies? *</label>
-        <input type="text" name="Allergies" placeholder="e.g., Latex, ink, soaps, or 'None'" required maxlength="200" class="w-full bg-zinc-600 border border-zinc-800 rounded px-4 py-2.5 text-zinc-200 focus:outline-none focus:border-amber-500 transition">
-      </div>
-    </div>
-  </div>
+ <!-- Time Slot: 01:00 PM -->
+ <div>
+ <input type="radio" id="time_1300" name="Requested_Time" value="01:00 PM" class="peer sr-only" required>
+ <label for="time_1300" class="flex items-center justify-center w-full py-2.5 text-sm rounded-xl border border-zinc-700 bg-zinc-700/30 text-zinc-400 cursor-pointer hover:bg-zinc-600 hover:text-zinc-200 hover:border-zinc-500 peer-checked:bg-amber-500 peer-checked:text-zinc-950 peer-checked:border-amber-500 peer-checked:font-bold peer-checked:shadow-[0_0_12px_rgba(245,158,11,0.4)] transition-all duration-300 select-none">
+ 01:00 PM
+ </label>
+ </div>
 
-  <div class="pt-4">
-    <button type="submit" id="submitBtn" class="w-full bg-amber-500 hover:bg-amber-600 text-zinc-950 font-bold uppercase tracking-widest py-3 px-4 rounded transition shadow-lg transform hover:-translate-y-0.5 active:translate-y-0">
-      Submit Booking Request
-    </button>
-  </div>
+ <!-- Time Slot: 01:30 PM -->
+ <div>
+ <input type="radio" id="time_1330" name="Requested_Time" value="01:30 PM" class="peer sr-only" required>
+ <label for="time_1330" class="flex items-center justify-center w-full py-2.5 text-sm rounded-xl border border-zinc-700 bg-zinc-700/30 text-zinc-400 cursor-pointer hover:bg-zinc-600 hover:text-zinc-200 hover:border-zinc-500 peer-checked:bg-amber-500 peer-checked:text-zinc-950 peer-checked:border-amber-500 peer-checked:font-bold peer-checked:shadow-[0_0_12px_rgba(245,158,11,0.4)] transition-all duration-300 select-none">
+ 01:30 PM
+ </label>
+ </div>
+
+ <!-- Time Slot: 02:00 PM -->
+ <div>
+ <input type="radio" id="time_1400" name="Requested_Time" value="02:00 PM" class="peer sr-only" required>
+ <label for="time_1400" class="flex items-center justify-center w-full py-2.5 text-sm rounded-xl border border-zinc-700 bg-zinc-700/30 text-zinc-400 cursor-pointer hover:bg-zinc-600 hover:text-zinc-200 hover:border-zinc-500 peer-checked:bg-amber-500 peer-checked:text-zinc-950 peer-checked:border-amber-500 peer-checked:font-bold peer-checked:shadow-[0_0_12px_rgba(245,158,11,0.4)] transition-all duration-300 select-none">
+ 02:00 PM
+ </label>
+ </div>
+
+ <!-- Time Slot: 02:30 PM -->
+ <div>
+ <input type="radio" id="time_1430" name="Requested_Time" value="02:30 PM" class="peer sr-only" required>
+ <label for="time_1430" class="flex items-center justify-center w-full py-2.5 text-sm rounded-xl border border-zinc-700 bg-zinc-700/30 text-zinc-400 cursor-pointer hover:bg-zinc-600 hover:text-zinc-200 hover:border-zinc-500 peer-checked:bg-amber-500 peer-checked:text-zinc-950 peer-checked:border-amber-500 peer-checked:font-bold peer-checked:shadow-[0_0_12px_rgba(245,158,11,0.4)] transition-all duration-300 select-none">
+ 02:30 PM
+ </label>
+ </div>
+
+ <!-- Time Slot: 03:00 PM -->
+ <div>
+ <input type="radio" id="time_1500" name="Requested_Time" value="03:00 PM" class="peer sr-only" required>
+ <label for="time_1500" class="flex items-center justify-center w-full py-2.5 text-sm rounded-xl border border-zinc-700 bg-zinc-700/30 text-zinc-400 cursor-pointer hover:bg-zinc-600 hover:text-zinc-200 hover:border-zinc-500 peer-checked:bg-amber-500 peer-checked:text-zinc-950 peer-checked:border-amber-500 peer-checked:font-bold peer-checked:shadow-[0_0_12px_rgba(245,158,11,0.4)] transition-all duration-300 select-none">
+ 03:00 PM
+ </label>
+ </div>
+
+ <!-- Time Slot: 03:30 PM -->
+ <div>
+ <input type="radio" id="time_1530" name="Requested_Time" value="03:30 PM" class="peer sr-only" required>
+ <label for="time_1530" class="flex items-center justify-center w-full py-2.5 text-sm rounded-xl border border-zinc-700 bg-zinc-700/30 text-zinc-400 cursor-pointer hover:bg-zinc-600 hover:text-zinc-200 hover:border-zinc-500 peer-checked:bg-amber-500 peer-checked:text-zinc-950 peer-checked:border-amber-500 peer-checked:font-bold peer-checked:shadow-[0_0_12px_rgba(245,158,11,0.4)] transition-all duration-300 select-none">
+ 03:30 PM
+ </label>
+ </div>
+
+ <!-- Time Slot: 04:00 PM -->
+ <div>
+ <input type="radio" id="time_1600" name="Requested_Time" value="04:00 PM" class="peer sr-only" required>
+ <label for="time_1600" class="flex items-center justify-center w-full py-2.5 text-sm rounded-xl border border-zinc-700 bg-zinc-700/30 text-zinc-400 cursor-pointer hover:bg-zinc-600 hover:text-zinc-200 hover:border-zinc-500 peer-checked:bg-amber-500 peer-checked:text-zinc-950 peer-checked:border-amber-500 peer-checked:font-bold peer-checked:shadow-[0_0_12px_rgba(245,158,11,0.4)] transition-all duration-300 select-none">
+ 04:00 PM
+ </label>
+ </div>
+
+ <!-- Time Slot: 04:30 PM -->
+ <div>
+ <input type="radio" id="time_1630" name="Requested_Time" value="04:30 PM" class="peer sr-only" required>
+ <label for="time_1630" class="flex items-center justify-center w-full py-2.5 text-sm rounded-xl border border-zinc-700 bg-zinc-700/30 text-zinc-400 cursor-pointer hover:bg-zinc-600 hover:text-zinc-200 hover:border-zinc-500 peer-checked:bg-amber-500 peer-checked:text-zinc-950 peer-checked:border-amber-500 peer-checked:font-bold peer-checked:shadow-[0_0_12px_rgba(245,158,11,0.4)] transition-all duration-300 select-none">
+ 04:30 PM
+ </label>
+ </div>
+
+ <!-- Time Slot: 05:00 PM -->
+ <div>
+ <input type="radio" id="time_1700" name="Requested_Time" value="05:00 PM" class="peer sr-only" required>
+ <label for="time_1700" class="flex items-center justify-center w-full py-2.5 text-sm rounded-xl border border-zinc-700 bg-zinc-700/30 text-zinc-400 cursor-pointer hover:bg-zinc-600 hover:text-zinc-200 hover:border-zinc-500 peer-checked:bg-amber-500 peer-checked:text-zinc-950 peer-checked:border-amber-500 peer-checked:font-bold peer-checked:shadow-[0_0_12px_rgba(245,158,11,0.4)] transition-all duration-300 select-none">
+ 05:00 PM
+ </label>
+ </div>
+
+ <!-- Time Slot: 05:30 PM -->
+ <div>
+ <input type="radio" id="time_1730" name="Requested_Time" value="05:30 PM" class="peer sr-only" required>
+ <label for="time_1730" class="flex items-center justify-center w-full py-2.5 text-sm rounded-xl border border-zinc-700 bg-zinc-700/30 text-zinc-400 cursor-pointer hover:bg-zinc-600 hover:text-zinc-200 hover:border-zinc-500 peer-checked:bg-amber-500 peer-checked:text-zinc-950 peer-checked:border-amber-500 peer-checked:font-bold peer-checked:shadow-[0_0_12px_rgba(245,158,11,0.4)] transition-all duration-300 select-none">
+ 05:30 PM
+ </label>
+ </div>
+
+ <!-- Time Slot: 06:00 PM -->
+ <div>
+ <input type="radio" id="time_1800" name="Requested_Time" value="06:00 PM" class="peer sr-only" required>
+ <label for="time_1800" class="flex items-center justify-center w-full py-2.5 text-sm rounded-xl border border-zinc-700 bg-zinc-700/30 text-zinc-400 cursor-pointer hover:bg-zinc-600 hover:text-zinc-200 hover:border-zinc-500 peer-checked:bg-amber-500 peer-checked:text-zinc-950 peer-checked:border-amber-500 peer-checked:font-bold peer-checked:shadow-[0_0_12px_rgba(245,158,11,0.4)] transition-all duration-300 select-none">
+ 06:00 PM
+ </label>
+ </div>
+
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <hr class="border-zinc-800 my-6">
+
+ <div>
+ <h2 class="text-lg font-bold text-amber-500 uppercase tracking-wider mb-4">3. Tattoo Concept & Details</h2>
+ <div class="space-y-4">
+ <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+ <div>
+ <label class="block text-xs uppercase font-semibold text-zinc-400 mb-1">Placement on Body *</label>
+ <input type="text" name="Body_Placement" placeholder="e.g., Outer forearm, wrist..." required maxlength="100" class="w-full bg-zinc-600 border border-zinc-800 rounded px-4 py-2.5 text-zinc-200 focus:outline-none focus:border-amber-500 transition">
+ </div>
+ <div>
+ <label class="block text-xs uppercase font-semibold text-zinc-400 mb-1">Estimated Size *</label>
+ <input type="text" name="Estimated_Size" placeholder="e.g., 4x6&quot;, 10cm..." required maxlength="50" class="w-full bg-zinc-600 border border-zinc-800 rounded px-4 py-2.5 text-zinc-200 focus:outline-none focus:border-amber-500 transition">
+ </div>
+ <div>
+ <label class="block text-xs uppercase font-semibold text-zinc-400 mb-1">Ink Style *</label>
+ <select name="Ink_Style" required class="w-full bg-zinc-600 border border-zinc-800 rounded px-4 py-2.5 text-zinc-200 focus:outline-none focus:border-amber-500 transition">
+ <option value="">-- Choose Style --</option>
+ <option value="Black & Grey">Black & Grey</option>
+ <option value="Color">Color Ink</option>
+ </select>
+ </div>
+ </div>
+ 
+<div>
+ <label class="block text-xs uppercase font-semibold text-zinc-400 mb-1">Describe Your Idea *</label>
+ <textarea name="Idea_Description" rows="4" placeholder="Tell us about the story behind it, specific layout choices, and any details you want included..." required maxlength="2000" class="w-full bg-zinc-950 border border-zinc-800 rounded px-4 py-2.5 text-zinc-200 focus:outline-none focus:border-amber-500 transition resize-none"></textarea>
+ </div>
+ </div>
+ </div>
+
+ <hr class="border-zinc-800 my-6">
+
+ <div>
+ <h2 class="text-lg font-bold text-amber-500 uppercase tracking-wider mb-4">4. Safety & Eligibility</h2>
+ <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+ <div>
+ <label class="block text-xs uppercase font-semibold text-zinc-400 mb-1">Are you 18 or older? *</label>
+ <select name="Age_Verification" required class="w-full bg-zinc-600 border border-zinc-800 rounded px-4 py-2.5 text-zinc-200 focus:outline-none focus:border-amber-500 transition">
+ <option value="">-- Select Option --</option>
+ <option value="Yes">Yes, I am 18 or older</option>
+ <option value="No">No, I am under 18</option>
+ </select>
+ </div>
+ <div>
+ <label class="block text-xs uppercase font-semibold text-zinc-400 mb-1">Do you have any allergies? *</label>
+ <input type="text" name="Allergies" placeholder="e.g., Latex, ink, soaps, or 'None'" required maxlength="200" class="w-full bg-zinc-600 border border-zinc-800 rounded px-4 py-2.5 text-zinc-200 focus:outline-none focus:border-amber-500 transition">
+ </div>
+ </div>
+ </div>
+
+ <div class="pt-4">
+ <button type="submit" id="submitBtn" class="w-full bg-amber-500 hover:bg-amber-600 text-zinc-950 font-bold uppercase tracking-widest py-3 px-4 rounded transition shadow-lg transform hover:-translate-y-0.5 active:translate-y-0">
+ Submit Booking Request
+ </button>
+ </div>
 </form>
+ </div>
+
+ <!-- Version Number -->
+ <div class="fixed bottom-2 right-2 text-zinc-400/50 text-xs font-mono pointer-events-none z-50 select-none">
+ v1.2
+ </div>
+
+ <script>
+ // Set minimum booking date to today dynamically
+ const today = new Date().toISOString().split('T')[0];
+ document.getElementById('bookingDate').setAttribute('min', today);
+
+ // Fix for mobile keyboard blocking inputs
+ // This explicitly scrolls the active input into the center of the screen
+ const formElements = document.querySelectorAll('input:not([type="radio"]), select, textarea');
+ formElements.forEach(el => {
+     el.addEventListener('focus', function() {
+         // Slight delay gives the virtual keyboard time to fully animate onto the screen
+         setTimeout(() => {
+             this.scrollIntoView({ behavior: 'smooth', block: 'center' });
+         }, 300); 
+     });
+ });
+ </script>
+</body>
+</html>
